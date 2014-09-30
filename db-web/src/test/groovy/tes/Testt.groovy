@@ -3,6 +3,7 @@ package tes;
 import groovy.util.logging.Log4j
 import org.junit.Test
 
+
 @Log4j
 class Testt {
 
@@ -14,7 +15,7 @@ class Testt {
 		def list=['pro','test']
 
 		if (list.contains('pro'))
-			print "si"
+			log.info "si"
 	}
 }
 

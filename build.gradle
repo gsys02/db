@@ -39,10 +39,13 @@ project.ext {
 	// util
 	slf4j					= 'org.slf4j:slf4j-log4j12:1.7.5'
 	javax					= 'javax.annotation:javax.annotation-api:1.2'
-
+	
+	jackson					= 'com.fasterxml.jackson.core:jackson-databind:2.4.0'
+	jaxb_api				= 'javax.xml.bind:jaxb-api:2.2.11'
 
 	// test
 	junit					= 'junit:junit:4.11'
+	spring_test				= 'org.springframework:spring-test:4.1.0.RELEASE'
 }
 def _=project.ext
 
@@ -62,8 +65,9 @@ subprojects {
 	}
 
 	dependencies {
-		compile 	_.slf4j
-		testCompile _.junit
+		compile 		_.slf4j
+		testCompile		_.junit
+		testCompile		_.spring_test
 	}
 }
 
@@ -146,7 +150,9 @@ project(_.web){
 		compile				_.spring_webmvc
 
 		compile				_.javax
-
+		compile				_.jackson
+		compile				_.jaxb_api
+		
 		providedCompile		_.servlet
 		jetty8			 	_.jetty
 	}
