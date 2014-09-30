@@ -21,6 +21,8 @@ project.ext {
 	spring_security 		= 'org.springframework.security:spring-security-web:3.2.5.RELEASE'
 	spring_security_config	= 'org.springframework.security:spring-security-config:3.2.5.RELEASE'
 	spring_security_taglibs	= 'org.springframework.security:spring-security-taglibs:3.2.5.RELEASE'
+	spring_webmvc			= 'org.springframework:spring-webmvc:4.1.0.RELEASE'
+	
 
 	pac4j_security			= 'org.pac4j:spring-security-pac4j:1.2.3'
 	pac4j_cas				= 'org.pac4j:pac4j-cas:1.5.1'
@@ -141,23 +143,11 @@ project(_.web){
 		compile project 	(_.service)
 		compile				_.groovy
 
-		compile				_.spring_context
-		compile				_.spring_webflow
-		compile				_.spring_faces
-		compile				_.spring_security
-		compile				_.spring_security_config
-		compile				_.spring_security_taglibs
+		compile				_.spring_webmvc
 
-		compile 			_.pac4j_security
-		compile 			_.pac4j_cas
-
-		compile				_.primefaces
-		compile				_.jsf_api
-		compile				_.jsf_impl
 		compile				_.javax
 
 		providedCompile		_.servlet
-
 		jetty8			 	_.jetty
 	}
 
